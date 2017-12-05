@@ -4,7 +4,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: {
         login: ['./js/login.js'],
-        favorate: ['./js/favorate.js']
+        favorate: ['./js/favorate.js'],
+        caipintongji: ['./js/caipintongji.js']
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -20,6 +21,15 @@ module.exports = {
             chunks: ['favorate'],
             filename: './favorate.html',
             template: './favorate.html',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true
+            }
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['caipintongji'],
+            filename: './caipintongji.html',
+            template: './caipintongji.html',
             minify: {
                 removeComments: true,
                 collapseWhitespace: true
